@@ -1,0 +1,16 @@
+[package]
+name = "zevryn"
+version = "0.1.0"
+edition = "2021"
+description = "Full Rust reimplementation of the GameHub Lite reference, mirrored at reference paths"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+debug = false
+incremental = false
+[profile.test]
+opt-level = 0
+debug = false
+incremental = false
