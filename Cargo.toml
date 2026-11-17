@@ -6,6 +6,10 @@ description = "Full Rust reimplementation of the GameHub Lite reference, mirrore
 
 [dependencies]
 
+[lib]
+# rlib for tests / normal Rust use; cdylib so it can be loaded as libzevryn.so on Android.
+crate-type = ["rlib", "cdylib"]
+
 [profile.dev]
 opt-level = 0
 debug = false

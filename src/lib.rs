@@ -3,6 +3,9 @@
 //! Every module sits at the path of the decompiled source it replaces.
 //! The tree under `app/` mirrors the reference structure.
 
+// --- JNI bridge for the Android APK shell ---
+pub mod jni;
+
 // --- com/xj/app + deeplink + navigation ---
 #[path = "../sources/com/xj/app/mod.rs"]
 pub mod app_boot;
