@@ -1,13 +1,21 @@
 package com.zevryn.app
 
+import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
     companion object {
+        private const val TAG = "Zevryn"
+
         init {
-            System.loadLibrary("zevryn")
+            try {
+                System.loadLibrary("zevryn")
+                Log.i(TAG, "libzevryn.so loaded")
+            } catch (t: Throwable) {
+                Log.e(TAG, "Failed to load libzevryn.so", t)
+            }
         }
     }
 
@@ -16,8 +24,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(TAG, "onCreate")
+
+        val text = try {
+            "Zevryn\n${coreVersion()}\n${coreStatus()}"
+        } catch (t: Throwable) {
+            Log.e(TAG, "Native call failed", t)
+            "Zevryn\n(native call failed - see logcat)"
+        }
+
         val tv = TextView(this).apply {
-            text = "Zevryn\n${coreVersion()}\n${coreStatus()}"
+            this.text = text
             textSize = 20f
             setPadding(48, 48, 48, 48)
         }
