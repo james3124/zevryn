@@ -57,10 +57,10 @@ class ButtonMappingFragment : Fragment() {
 }
 
 /** One action and the string resource id of the key currently bound to it. */
-internal data class CtrlBinding(val actionRes: Int, val keyRes: Int)
+data class CtrlBinding(val actionRes: Int, val keyRes: Int)
 
 /** Adapter shared by the gamepad and button-mapping lists. */
-internal class CtrlBindingAdapter(
+class CtrlBindingAdapter(
     private val bindings: List<CtrlBinding>,
     private val onClick: (CtrlBinding) -> Unit
 ) : RecyclerView.Adapter<CtrlBindingAdapter.BindingViewHolder>() {

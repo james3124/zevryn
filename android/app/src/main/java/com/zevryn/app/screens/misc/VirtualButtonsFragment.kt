@@ -69,30 +69,30 @@ class VirtualButtonsFragment : Fragment() {
         val right = root.findViewById<View>(R.id.miscDpadRight)
         val center = root.findViewById<View>(R.id.miscDpadCenter)
 
-        up.nextFocusDown = R.id.miscDpadCenter
-        center.nextFocusUp = R.id.miscDpadUp
-        center.nextFocusDown = R.id.miscDpadDown
-        center.nextFocusLeft = R.id.miscDpadLeft
-        center.nextFocusRight = R.id.miscDpadRight
-        left.nextFocusUp = R.id.miscDpadUp
-        left.nextFocusDown = R.id.miscDpadDown
-        right.nextFocusUp = R.id.miscDpadUp
-        right.nextFocusDown = R.id.miscDpadDown
-        down.nextFocusUp = R.id.miscDpadCenter
+        up.nextFocusDownId = R.id.miscDpadCenter
+        center.nextFocusUpId = R.id.miscDpadUp
+        center.nextFocusDownId = R.id.miscDpadDown
+        center.nextFocusLeftId = R.id.miscDpadLeft
+        center.nextFocusRightId = R.id.miscDpadRight
+        left.nextFocusUpId = R.id.miscDpadUp
+        left.nextFocusDownId = R.id.miscDpadDown
+        right.nextFocusUpId = R.id.miscDpadUp
+        right.nextFocusDownId = R.id.miscDpadDown
+        down.nextFocusUpId = R.id.miscDpadCenter
 
         // Bridge the two clusters for gamepad users.
-        right.nextFocusRight = R.id.miscBtnX
-        root.findViewById<View>(R.id.miscBtnX).nextFocusLeft = R.id.miscDpadRight
+        right.nextFocusRightId = R.id.miscBtnX
+        root.findViewById<View>(R.id.miscBtnX).nextFocusLeftId = R.id.miscDpadRight
 
         // A/B/X/Y form a small 2x2 grid.
-        root.findViewById<View>(R.id.miscBtnX).nextFocusRight = R.id.miscBtnY
-        root.findViewById<View>(R.id.miscBtnX).nextFocusDown = R.id.miscBtnA
-        root.findViewById<View>(R.id.miscBtnY).nextFocusLeft = R.id.miscBtnX
-        root.findViewById<View>(R.id.miscBtnY).nextFocusDown = R.id.miscBtnB
-        root.findViewById<View>(R.id.miscBtnA).nextFocusUp = R.id.miscBtnX
-        root.findViewById<View>(R.id.miscBtnA).nextFocusRight = R.id.miscBtnB
-        root.findViewById<View>(R.id.miscBtnB).nextFocusUp = R.id.miscBtnY
-        root.findViewById<View>(R.id.miscBtnB).nextFocusLeft = R.id.miscBtnA
+        root.findViewById<View>(R.id.miscBtnX).nextFocusRightId = R.id.miscBtnY
+        root.findViewById<View>(R.id.miscBtnX).nextFocusDownId = R.id.miscBtnA
+        root.findViewById<View>(R.id.miscBtnY).nextFocusLeftId = R.id.miscBtnX
+        root.findViewById<View>(R.id.miscBtnY).nextFocusDownId = R.id.miscBtnB
+        root.findViewById<View>(R.id.miscBtnA).nextFocusUpId = R.id.miscBtnX
+        root.findViewById<View>(R.id.miscBtnA).nextFocusRightId = R.id.miscBtnB
+        root.findViewById<View>(R.id.miscBtnB).nextFocusUpId = R.id.miscBtnY
+        root.findViewById<View>(R.id.miscBtnB).nextFocusLeftId = R.id.miscBtnA
     }
 
     /** A circular button background built in code — no new drawable files. */
