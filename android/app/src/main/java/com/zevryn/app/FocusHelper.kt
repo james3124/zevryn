@@ -25,9 +25,9 @@ object FocusHelper {
             return if (index < count) FOCUS_ID_BASE + index else View.NO_ID
         }
 
-        view.setNextFocusLeft(idAt(row, col - 1))
-        view.setNextFocusRight(idAt(row, col + 1))
-        view.setNextFocusUp(idAt(row - 1, col))
-        view.setNextFocusDown(idAt(row + 1, col))
+        view.nextFocusLeftId = idAt(row, col - 1)
+        view.nextFocusRightId = idAt(row, col + 1)
+        view.nextFocusUpId = idAt(row - 1, col)
+        view.nextFocusDownId = idAt(row + 1, col)
     }
 }

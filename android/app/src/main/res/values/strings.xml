@@ -35,4 +35,191 @@
     <string name="status_battery">100%</string>
     <string name="tips_nav">D-pad: navigate | A: select</string>
     <string name="tips_back">B: back</string>
+
+    <!-- Settings screen -->
+    <string name="tab_settings">Settings</string>
+    <string name="settings_header">Settings</string>
+    <string name="settings_hint">Offline-first — no account or cloud required</string>
+    <string name="setting_offline_title">Offline Mode</string>
+    <string name="setting_offline_subtitle">Run the Rust core without a network connection</string>
+    <string name="setting_offline_on">Offline Mode on</string>
+    <string name="setting_offline_off">Offline Mode off</string>
+    <string name="setting_import_title">Import Game</string>
+    <string name="setting_import_subtitle">Add a local game to your library</string>
+    <string name="setting_import_toast">Import Game (demo)</string>
+    <string name="setting_keymap_title">Gamepad / Key Mapping</string>
+    <string name="setting_keymap_subtitle">Calibrate controllers and bind keys</string>
+    <string name="setting_keymap_toast">Key mapping (demo)</string>
+    <string name="setting_about_title">About</string>
+    <string name="setting_about_subtitle">Zevryn 0.1.0 / Rust core offline-capable</string>
+
+    <!-- Device screen -->
+    <string name="tab_device">Devices</string>
+    <string name="device_header">Devices</string>
+    <string name="device_hint">Paired controllers and stream hosts</string>
+    <string name="device_scan">Scan for devices</string>
+    <string name="device_scanning_toast">Scanning...</string>
+    <string name="device_selected_toast">Selected %1$s</string>
+    <string name="device_icon_desc">Device</string>
+    <string name="device_1_name">Virtual Gamepad</string>
+    <string name="device_1_status">Connected</string>
+    <string name="device_2_name">PC Stream Host</string>
+    <string name="device_2_status">Available (offline demo)</string>
+    <string name="device_3_name">Bluetooth Controller</string>
+    <string name="device_3_status">Paired</string>
+
+    <!-- Gamepad / button-mapping screens (controller/) -->
+    <string name="ctrl_gamepad_header">Gamepad</string>
+    <string name="ctrl_gamepad_hint">Controller schematic and mapped buttons (demo)</string>
+    <string name="ctrl_calibrate">Calibrate</string>
+    <string name="ctrl_calibrate_toast">Calibration started (demo)</string>
+    <string name="ctrl_mapped_header">Mapped buttons</string>
+    <string name="ctrl_dpad_up">Up</string>
+    <string name="ctrl_dpad_down">Down</string>
+    <string name="ctrl_dpad_left">Left</string>
+    <string name="ctrl_dpad_right">Right</string>
+    <string name="ctrl_face_a">A</string>
+    <string name="ctrl_face_b">B</string>
+    <string name="ctrl_face_x">X</string>
+    <string name="ctrl_face_y">Y</string>
+    <string name="ctrl_gamepad_button_toast">%1$s (demo)</string>
+    <string name="ctrl_button_mapping_header">Button Mapping</string>
+    <string name="ctrl_button_mapping_hint">Game Settings — tap an action to rebind its key</string>
+    <string name="ctrl_press_key_toast">Press a key...</string>
+    <string name="ctrl_bound_key">Key: %1$s</string>
+    <string name="ctrl_action_move">Move</string>
+    <string name="ctrl_action_jump">Jump</string>
+    <string name="ctrl_action_attack">Attack</string>
+    <string name="ctrl_action_sprint">Sprint</string>
+    <string name="ctrl_action_interact">Interact</string>
+    <string name="ctrl_action_pause">Pause</string>
+    <string name="ctrl_key_w">W</string>
+    <string name="ctrl_key_space">Space</string>
+    <string name="ctrl_key_mouse_left">Mouse Left</string>
+    <string name="ctrl_key_shift">Shift</string>
+    <string name="ctrl_key_e">E</string>
+    <string name="ctrl_key_esc">Esc</string>
+
+    <!-- Misc screens: tab labels (for the parent session to wire up) -->
+    <string name="misc_tab_mobile_game">Mobile Games</string>
+    <string name="misc_tab_virtual_buttons">Virtual Buttons</string>
+    <string name="misc_tab_about">About</string>
+
+    <!-- Mobile Games screen -->
+    <string name="misc_mobile_header">Mobile Games</string>
+    <string name="misc_mobile_hint">Installed games - offline demo data</string>
+    <string name="misc_game_selected_toast">Selected %1$s (demo)</string>
+    <string name="misc_game_1_badge">A</string>
+    <string name="misc_game_1_name">Asphalt Legends</string>
+    <string name="misc_game_1_meta">Racing - 1.2 GB - installed</string>
+    <string name="misc_game_2_badge">G</string>
+    <string name="misc_game_2_name">Genshin Impact</string>
+    <string name="misc_game_2_meta">Action RPG - 6.8 GB - installed</string>
+    <string name="misc_game_3_badge">R</string>
+    <string name="misc_game_3_name">Roblox</string>
+    <string name="misc_game_3_meta">Sandbox - 240 MB - installed</string>
+    <string name="misc_game_4_badge">C</string>
+    <string name="misc_game_4_name">Call of Duty Mobile</string>
+    <string name="misc_game_4_meta">Shooter - 2.1 GB - installed</string>
+    <string name="misc_game_5_badge">U</string>
+    <string name="misc_game_5_name">Among Us</string>
+    <string name="misc_game_5_meta">Party - 180 MB - installed</string>
+
+    <!-- Virtual Buttons screen -->
+    <string name="misc_virtual_header">Virtual Buttons</string>
+    <string name="misc_virtual_hint">On-screen control overlay preview</string>
+    <string name="misc_virtual_surface_desc">On-screen control overlay</string>
+    <string name="misc_overlay_show">Show overlay</string>
+    <string name="misc_virtual_btn_toast">%1$s pressed (demo)</string>
+    <string name="misc_dpad_up">▲</string>
+    <string name="misc_dpad_down">▼</string>
+    <string name="misc_dpad_left">◀</string>
+    <string name="misc_dpad_right">▶</string>
+    <string name="misc_dpad_center">OK</string>
+    <string name="misc_btn_a">A</string>
+    <string name="misc_btn_b">B</string>
+    <string name="misc_btn_x">X</string>
+    <string name="misc_btn_y">Y</string>
+
+    <!-- About screen -->
+    <string name="misc_about_header">About Zevryn</string>
+    <string name="misc_about_version">Zevryn 0.1.0</string>
+    <string name="misc_about_core">Rust core offline-capable</string>
+    <string name="misc_about_modules">Modules: 12 (static demo)</string>
+    <string name="misc_about_note">Zevryn is a reimplementation of GameHub Lite. All content on this screen is static and offline.</string>
+
+    <!-- Media screens (local demo data only) -->
+    <string name="media_tab_album">Album</string>
+    <string name="media_tab_notification">Notifications</string>
+    <string name="media_tab_feedback">Feedback</string>
+
+    <string name="media_album_header">Album</string>
+    <string name="media_album_hint">Local screenshots and highlights (demo)</string>
+    <string name="media_album_click_toast">Opening %1$s (demo)</string>
+    <string name="media_album_1">Gameplay Highlights</string>
+    <string name="media_album_2">Screenshots</string>
+    <string name="media_album_3">Recent Captures</string>
+    <string name="media_album_4">Desktop Setup</string>
+    <string name="media_album_5">Controller Shots</string>
+    <string name="media_album_6">Stream Sessions</string>
+
+    <string name="media_notification_header">Notifications</string>
+    <string name="media_notification_hint">Recent activity — tap to mark as read (demo)</string>
+    <string name="media_notification_marked_read">Marked as read</string>
+    <string name="media_notification_1_title">Core ready</string>
+    <string name="media_notification_1_msg">Rust core loaded in offline mode.</string>
+    <string name="media_notification_1_time">09:41</string>
+    <string name="media_notification_2_title">Library updated</string>
+    <string name="media_notification_2_msg">6 local games are ready to play.</string>
+    <string name="media_notification_2_time">Yesterday</string>
+    <string name="media_notification_3_title">Device connected</string>
+    <string name="media_notification_3_msg">Virtual Gamepad paired successfully.</string>
+    <string name="media_notification_3_time">Mon</string>
+    <string name="media_notification_4_title">Tip of the day</string>
+    <string name="media_notification_4_msg">Use the D-pad to browse the launcher.</string>
+    <string name="media_notification_4_time">Sun</string>
+
+    <string name="media_feedback_header">Feedback</string>
+    <string name="media_feedback_hint">Stored locally — nothing leaves the device</string>
+    <string name="media_feedback_input_hint">Write your feedback here…</string>
+    <string name="media_feedback_send">Send</string>
+    <string name="media_feedback_saved">Feedback saved locally</string>
+
+    <!-- Game detail screen + long-press action menu (values mirror the
+         GameHub Lite reference: Play Now / More Details / PC Game Settings /
+         Check Compatibility / Add-Remove Library / Uninstall). -->
+    <string name="zd_detail_default_title">Untitled Game</string>
+    <string name="zd_detail_description">A featured title available on Zevryn. Launch it on this device with a gamepad, or manage it from the game actions menu.</string>
+    <string name="zd_detail_more_text">Genre: Action Adventure | Mode: Single player | Release: 2024 | Languages: English, Chinese, Spanish | Rating: Teen</string>
+    <string name="zd_detail_play_now">Play Now</string>
+    <string name="zd_detail_more_info">More Details</string>
+    <string name="zd_detail_less_info">Less Details</string>
+    <string name="zd_detail_actions_hint">Long-press the cover or this page for game actions</string>
+    <string name="zd_detail_menu_title">Game Actions - %1$s</string>
+    <string name="zd_detail_pc_game_settings">PC Game Settings</string>
+    <string name="zd_detail_check_compat">Check Compatibility</string>
+    <string name="zd_detail_add_lib">Add to Game Library</string>
+    <string name="zd_detail_remove_lib">Remove Library</string>
+    <string name="zd_detail_uninstall">Uninstall</string>
+    <string name="zd_detail_added_toast">%1$s has been added to your game library</string>
+    <string name="zd_detail_removed_toast">%1$s has been removed from your game library</string>
+    <string name="zd_detail_play_toast">Launching %1$s (mode %2$d, demo)</string>
+    <string name="zd_detail_action_toast">%1$s - %2$s (demo)</string>
+    <string name="zd_detail_uninstall_confirm">Uninstall %1$s? This removes its local files.</string>
+    <string name="zd_detail_uninstall_done">%1$s uninstalled (demo)</string>
+
+    <!-- Search screen (filter options reuse the existing filter_options array). -->
+    <string name="zd_search_header">Search</string>
+    <string name="zd_search_hint">Search games...</string>
+    <string name="zd_search_filter">Filter</string>
+
+    <!-- Main launcher tab labels -->
+    <string name="tab_game_detail">Game</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_gamepad">Gamepad</string>
+    <string name="tab_mapped">Mapping</string>
+
+    <!-- Common dialog actions -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

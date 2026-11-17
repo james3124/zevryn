@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gamepad screen: a focusable controller schematic plus a list of mapped
+     buttons. Purely informational demo data — no native/JNI calls. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ctrl_gamepad_header"
+        android:textColor="@color/textPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ctrl_gamepad_hint"
+        android:textColor="@color/textSecondary"
+        android:textSize="12sp"
+        android:paddingStart="16dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Controller schematic. Every button is focusable and has explicit
+         D-pad neighbours so a gamepad can walk the whole cluster. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="16dp"
+        android:background="@drawable/card_background">
+
+        <!-- D-pad cluster -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ctrlDpadUp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:minHeight="44dp"
+                android:padding="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusDown="@id/ctrlDpadDown"
+                android:text="@string/ctrl_dpad_up"
+                android:textSize="13sp"
+                android:textAllCaps="false"
+                android:textColor="@color/textPrimary"
+                android:background="@drawable/card_background"
+                android:foreground="@drawable/focus_border" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ctrlDpadLeft"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:minHeight="44dp"
+                    android:padding="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusRight="@id/ctrlDpadRight"
+                    android:text="@string/ctrl_dpad_left"
+                    android:textSize="13sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textPrimary"
+                    android:background="@drawable/card_background"
+                    android:foreground="@drawable/focus_border" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ctrlDpadRight"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:minHeight="44dp"
+                    android:padding="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusLeft="@id/ctrlDpadLeft"
+                    android:nextFocusRight="@id/ctrlFaceY"
+                    android:text="@string/ctrl_dpad_right"
+                    android:textSize="13sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textPrimary"
+                    android:background="@drawable/card_background"
+                    android:foreground="@drawable/focus_border" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ctrlDpadDown"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:minHeight="44dp"
+                android:padding="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusUp="@id/ctrlDpadUp"
+                android:text="@string/ctrl_dpad_down"
+                android:textSize="13sp"
+                android:textAllCaps="false"
+                android:textColor="@color/textPrimary"
+                android:background="@drawable/card_background"
+                android:foreground="@drawable/focus_border" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="32dp"
+            android:layout_height="wrap_content" />
+
+        <!-- Face buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ctrlFaceY"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:minHeight="44dp"
+                android:padding="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusLeft="@id/ctrlDpadRight"
+                android:nextFocusDown="@id/ctrlFaceX"
+                android:text="@string/ctrl_face_y"
+                android:textSize="15sp"
+                android:textColor="@color/textPrimary"
+                android:background="@drawable/card_background"
+                android:foreground="@drawable/focus_border" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ctrlFaceX"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:minHeight="44dp"
+                    android:padding="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusUp="@id/ctrlFaceY"
+                    android:nextFocusRight="@id/ctrlFaceB"
+                    android:text="@string/ctrl_face_x"
+                    android:textSize="15sp"
+                    android:textColor="@color/textPrimary"
+                    android:background="@drawable/card_background"
+                    android:foreground="@drawable/focus_border" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ctrlFaceB"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:minHeight="44dp"
+                    android:padding="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:nextFocusLeft="@id/ctrlFaceX"
+                    android:nextFocusDown="@id/ctrlFaceA"
+                    android:text="@string/ctrl_face_b"
+                    android:textSize="15sp"
+                    android:textColor="@color/textPrimary"
+                    android:background="@drawable/card_background"
+                    android:foreground="@drawable/focus_border" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ctrlFaceA"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:minHeight="44dp"
+                android:padding="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:nextFocusUp="@id/ctrlFaceB"
+                android:nextFocusDown="@id/ctrlCalibrateButton"
+                android:text="@string/ctrl_face_a"
+                android:textSize="15sp"
+                android:textColor="@color/textPrimary"
+                android:background="@drawable/card_background"
+                android:foreground="@drawable/focus_border" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ctrlCalibrateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:minHeight="44dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusUp="@id/ctrlFaceA"
+        android:text="@string/ctrl_calibrate"
+        android:textColor="@color/textPrimary"
+        android:textAllCaps="false"
+        android:background="@drawable/card_background"
+        android:foreground="@drawable/focus_border" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ctrl_mapped_header"
+        android:textColor="@color/textSecondary"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ctrlGamepadBindings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="none" />
+</LinearLayout>
