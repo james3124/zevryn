@@ -33,10 +33,7 @@ unsafe fn to_jstring(env: *mut c_void, text: &str) -> *mut c_void {
         return std::ptr::null_mut();
     }
     let slot = interface.add(NEW_STRING_UTF_INDEX) as *const NewStringUtf;
-    let new_string_utf = *slot;
-    if new_string_utf.is_null() {
-        return std::ptr::null_mut();
-    }
+    let new_string_utf = *slot; // non-null: `interface` was checked above
     let c_text = std::ffi::CString::new(text).unwrap_or_default();
     new_string_utf(env, c_text.as_ptr())
 }
