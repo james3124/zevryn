@@ -7,6 +7,9 @@ on:
     branches: [master]
   workflow_dispatch:
 
+env:
+  NDK_VERSION: '26.3.11579264'
+
 jobs:
   build-apk:
     runs-on: ubuntu-latest
@@ -20,22 +23,18 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # Accept licenses first via the preinstalled sdkmanager so the action's
-      # own --licenses call (which fails on some runners) is a no-op.
-      - name: Accept Android SDK licenses
+      # GitHub-hosted ubuntu runners ship the Android SDK preinstalled at
+      # $ANDROID_HOME with cmdline-tools/latest. Avoid setup-android@v3: it
+      # tries to install the removed "tools" package and fails on current
+      # runners. Use the preinstalled sdkmanager directly instead.
+      - name: Accept SDK licenses + install platform/build-tools/NDK
         run: |
-          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          yes | "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --licenses > /dev/null || true
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          accept-android-sdk-licenses: false
-          log-accepted-android-sdk-licenses: false
-
-      - name: Install Android NDK + platform
-        run: |
-          sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;26.3.11579264"
+          SDKMGR="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          echo "Using sdkmanager: $SDKMGR"
+          yes | "$SDKMGR" --licenses > /dev/null 2>&1 || true
+          "$SDKMGR" "platforms;android-35" "build-tools;35.0.0" "ndk;$NDK_VERSION"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$NDK_VERSION" >> "$GITHUB_ENV"
 
       - name: Set up Rust + Android target
         uses: dtolnay/rust-toolchain@stable
@@ -46,25 +45,15 @@ jobs:
         run: cargo install cargo-ndk --locked
 
       - name: Run Rust tests (host)
-        working-directory: .
         run: cargo test --all-targets
 
       - name: Build libzevryn.so for arm64-v8a
-        working-directory: .
-        env:
-          ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_HOME }}
-        run: |
-          export ANDROID_NDK_HOME="${ANDROID_NDK_HOME:-$ANDROID_HOME/ndk/26.3.11579264}"
-          cargo ndk -t arm64-v8a -o android/app/src/main/jniLibs build --release
+        run: cargo ndk -t arm64-v8a -o android/app/src/main/jniLibs build --release
 
       - name: Verify native library was produced
         run: |
           test -f android/app/src/main/jniLibs/arm64-v8a/libzevryn.so
           ls -l android/app/src/main/jniLibs/arm64-v8a/
-
-      - name: Make Gradle wrapper executable (if present)
-        run: |
-          if [ -f android/gradlew ]; then chmod +x android/gradlew; fi
 
       - name: Assemble debug APK with Gradle
         uses: gradle/gradle-build-action@v3
