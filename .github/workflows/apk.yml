@@ -20,8 +20,18 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # Accept licenses first via the preinstalled sdkmanager so the action's
+      # own --licenses call (which fails on some runners) is a no-op.
+      - name: Accept Android SDK licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+          yes | "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" --licenses > /dev/null || true
+
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          accept-android-sdk-licenses: false
+          log-accepted-android-sdk-licenses: false
 
       - name: Install Android NDK + platform
         run: |
