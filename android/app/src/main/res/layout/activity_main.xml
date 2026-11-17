@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
+
+    <!-- Top bar: tab bar on the left, status cluster on the right (reference llauncher_activity_new_launcher_main.xml). -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/surface"
+        android:elevation="4dp">
+
+        <FrameLayout
+            android:id="@+id/fl_open_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp">
+
+            <ImageButton
+                android:id="@+id/iv_open_nav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_menu"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_nav" />
+        </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tab_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/surface"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="@color/textPrimary"
+            app:tabTextColor="@color/textSecondary"
+            app:tabMinWidth="120dp" />
+
+        <!-- Right-side status bar (ll_right_top_status). -->
+        <LinearLayout
+            android:id="@+id/ll_right_top_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="12dp">
+
+            <View
+                android:id="@+id/right_user_avatar_view"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_avatar" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_search"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/iv_downloading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_download"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/iv_device_online"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_device"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/iv_signal_level"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_signal"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/iv_battery_level"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_battery"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/tv_battery_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_battery"
+                android:textColor="@color/textSecondary"
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp" />
+
+            <TextClock
+                android:id="@+id/tv_system_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format24Hour="HH:mm"
+                android:format12Hour="HH:mm"
+                android:textColor="@color/textPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Current tab's fragment lives here (reference page_container). -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/page_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/iv_tips_lb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="10dp"
+            android:text="@string/tips_nav"
+            android:textColor="@color/textSecondary"
+            android:textSize="11sp"
+            android:alpha="0.75"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/iv_tips_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            android:text="@string/tips_back"
+            android:textColor="@color/textSecondary"
+            android:textSize="11sp"
+            android:alpha="0.75"
+            android:importantForAccessibility="no" />
+    </FrameLayout>
+</LinearLayout>

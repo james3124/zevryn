@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="colorPrimary">#FF2D6C</color>
+    <color name="colorPrimaryDark">#12141B</color>
+    <color name="colorAccent">#FF2D6C</color>
+
+    <!-- Surfaces -->
+    <color name="windowBackground">#0E1016</color>
+    <color name="surface">#181B26</color>
+    <color name="cardBg">#1C1F2B</color>
+    <color name="cardBgFocused">#2A1B2C</color>
+    <color name="cardBgPressed">#242838</color>
+    <color name="cardStroke">#2C3040</color>
+    <color name="cardStrokeFocused">#FF2D6C</color>
+    <color name="focusBorder">#FF2D6C</color>
+    <color name="badgeBg">#546E7A</color>
+    <color name="chipBg">#66000000</color>
+    <color name="bannerPlaceholder">#FF2D6C</color>
+    <color name="statusIcon">#9AA0B5</color>
+
+    <!-- Text -->
+    <color name="textPrimary">#F5F6FA</color>
+    <color name="textSecondary">#9AA0B5</color>
+</resources>

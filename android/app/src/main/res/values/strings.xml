@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zevryn</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_instant_play">Instant Play</string>
+
+    <!-- Headers -->
+    <string name="dashboard_header">Dashboard</string>
+    <string name="library_header">Instant Play</string>
+    <string name="core_info">Rust core v%1$d - %2$d modules</string>
+
+    <!-- Sort / filter -->
+    <string name="sort_by">Sort</string>
+    <string name="filter_by">Filter</string>
+    <string-array name="sort_options">
+        <item>Title A-Z</item>
+        <item>Title Z-A</item>
+        <item>Platform</item>
+    </string-array>
+    <string-array name="filter_options">
+        <item>All</item>
+        <item>PC</item>
+        <item>Mobile</item>
+    </string-array>
+
+    <!-- Feedback -->
+    <string name="card_click_toast">Opening %1$s</string>
+    <string name="game_click_toast">%1$s - launching (demo)</string>
+    <string name="unknown_kind">GAME</string>
+
+    <!-- Status bar / hints -->
+    <string name="cd_nav">Navigation</string>
+    <string name="status_battery">100%</string>
+    <string name="tips_nav">D-pad: navigate | A: select</string>
+    <string name="tips_back">B: back</string>
 </resources>
